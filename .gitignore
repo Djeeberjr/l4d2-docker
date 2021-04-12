@@ -1,0 +1,7 @@
+*
+!.gitignore
+!Dockerfile
+!docker-compose.yml
+!start.sh
+!README.md
+!.drone.yml
