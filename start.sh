@@ -14,4 +14,4 @@ env | awk -F "=" '/^CVAR_/ {sub("CVAR_","",$1); print tolower($1),($2 ~ /^[0-9]+
 
 echo "### Starting l4d2 ###"
 
-$HOME/server/srcds_run -console -game left4dead2 +maxplayers 16 -maxclients 16 +map c1m1_hotel +exec server.cfg
+$HOME/server/srcds_run -console -game left4dead2 +maxplayers 16 -maxclients 16 +map c1m1_hotel +exec docker_server.cfg
