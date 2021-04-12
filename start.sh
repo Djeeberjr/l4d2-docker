@@ -9,7 +9,7 @@ echo "### Installing / Updateing l4d2 ###"
 echo "### Creating config ###"
 
 cd $HOME/server
-cp $HOME/server.cfg server.cfg
+cp $HOME/server.cfg $HOME/server/left4dead2/cfg/server.cfg
 
 env | awk -F "=" '/^CVAR_/ {sub("CVAR_","",$1); print tolower($1),($2 ~ /^[0-9]+$/)?$2:"\""$2"\""}' > docker_server.cfg
 
