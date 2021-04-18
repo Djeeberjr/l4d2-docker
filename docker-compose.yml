@@ -7,6 +7,9 @@ services:
       - CVAR_HOSTNAME=My left 4 dead server
       - CVAR_RCON_PASSWORD=password123
       - CVAR_MP_DISABLE_AUTOKICK=1
+    volume:
+      - ./motd.txt:/motd.txt:ro
+      - ./host:txt:/host.txt:ro
     ports:
       - 27015:27015
       - 27015:27015/udp
