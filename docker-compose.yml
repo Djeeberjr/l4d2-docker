@@ -6,8 +6,11 @@ services:
     environment:
       - CVAR_HOSTNAME=My left 4 dead server
       - CVAR_RCON_PASSWORD=password123
+      - CVAR_SV_ALLOW_LOBBY_CONNECT_ONLY=0
+      - CVAR_SV_CONSISTENCY=1
+      - CAVR_SV_VOICEENABLE=1
       - CVAR_MP_DISABLE_AUTOKICK=1
-    volume:
+    volumes:
       - ./motd.txt:/motd.txt:ro
       - ./host:txt:/host.txt:ro
     ports:
