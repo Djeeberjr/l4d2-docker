@@ -10,9 +10,18 @@ services:
       - CVAR_SV_CONSISTENCY=1
       - CAVR_SV_VOICEENABLE=1
       - CVAR_MP_DISABLE_AUTOKICK=1
-    volumes:
-      - ./motd.txt:/motd.txt:ro
-      - ./host:txt:/host.txt:ro
+      - "MOTD_FILE_CONTENT=Put your MODT here. \n
+Multiline is also supported."
+      - "HOST_FILE_CONTENT=Same with the host file \n
+lalalalal"
     ports:
       - 27015:27015
       - 27015:27015/udp
+    volumes:
+      - l4d2_game:/home/steam/server
+    stdin_open: true
+    tty: true
+volumes:
+  l4d2_game:
+    name: l4d2_game
+
