@@ -7,9 +7,10 @@ services:
       - CVAR_HOSTNAME=My left 4 dead server
       - CVAR_RCON_PASSWORD=password123
       - CVAR_SV_ALLOW_LOBBY_CONNECT_ONLY=0
-      - CVAR_SV_CONSISTENCY=1
+      - CVAR_SV_CONSISTENCY=0
       - CAVR_SV_VOICEENABLE=1
       - CVAR_MP_DISABLE_AUTOKICK=1
+      - INSECURE=true
       - "MOTD_FILE_CONTENT=Put your MODT here. \n
 Multiline is also supported."
       - "HOST_FILE_CONTENT=Same with the host file \n

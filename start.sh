@@ -25,4 +25,11 @@ env | awk -F "=" '/^CVAR_/ {sub("CVAR_","",$1); print tolower($1),($2 ~ /^[0-9]+
 
 cat /home/steam/server/left4dead2/cfg/server.cfg
 
-"$HOME/server/srcds_run" -console -game left4dead2 +maxplayers 16 -maxclients 16 -ip 0.0.0.0
+SRCDS_ARGS=""
+
+if [ -n "$INSECURE" ]; then
+    SRCDS_ARGS="${SRCDS_ARGS} -insecure"
+    echo "Running with VAC disabled."
+fi
+
+"$HOME/server/srcds_run" -console -game left4dead2 +maxplayers 16 -maxclients 16 -ip 0.0.0.0 $SRCDS_ARGS
