@@ -2,7 +2,20 @@
 
 set -e
 
-/home/steam/steamcmd/steamcmd.sh  +login anonymous +force_install_dir "$HOME/server" +app_update 222860 validate +quit
+/home/steam/steamcmd/steamcmd.sh  +login anonymous +force_install_dir "$HOME/server" +app_update 222860 +quit
+
+
+if [ ! -e "$HOME/server/left4dead2/addons/metamod.vdf" ]; then
+    echo "Installing Metamod"
+    curl https://mms.alliedmods.net/mmsdrop/1.11/mmsource-1.11.0-git1145-linux.tar.gz -o /tmp/metamod.tar.gz
+    tar -xf /tmp/metamod.tar.gz -C "$HOME/server/left4dead2"
+    rm /tmp/metamod.tar.gz
+
+    echo "Install Sourcemod"
+    curl https://sm.alliedmods.net/smdrop/1.10/sourcemod-1.10.0-git6524-linux.tar.gz -o /tmp/sourcemod.tar.gz
+    tar -xf /tmp/sourcemod.tar.gz -C "$HOME/server/left4dead2"
+    rm /tmp/sourcemod.tar.gz
+fi
 
 echo -n "$MOTD_FILE_CONTENT" > "$HOME/server/left4dead2/motd.txt"
 
