@@ -10,6 +10,7 @@ services:
       - CVAR_SV_CONSISTENCY=0
       - CAVR_SV_VOICEENABLE=1
       - CVAR_MP_DISABLE_AUTOKICK=1
+      - SM_ADMIN=STEAM_0:1:123,STEAM_0:1:456
       - INSECURE=true
       - "MOTD_FILE_CONTENT=Put your MODT here. \n
 Multiline is also supported."

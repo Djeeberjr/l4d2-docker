@@ -1,5 +1,7 @@
 Left 4 dead 2 server. With Metamod and Sourcemod.
 
+[Github](https://github.com/Djeeberjr/l4d2-docker)
+
 # Ports
 - 27015
 - 27015/udp
@@ -15,6 +17,8 @@ So for example to set the RCON password set the enviroment variable `CVAR_RCON_P
 Try to avoid variables with the word `CVAR_` and avoid `=` in it.
 
 A list of available cvars can be found [here](https://developer.valvesoftware.com/wiki/List_of_L4D2_Cvars).
+
+Add your steam ids to `SM_ADMIN` to be added as a sourcemod admin. 
 
 If there is a new version of Metamod or Sourcemod and is not yet set in the image you can manually set the download URL in `METAMOD_DL_URL` and `SOURCEMOD_DL_URL`.
 It will only get update if the addon directory is empty.
