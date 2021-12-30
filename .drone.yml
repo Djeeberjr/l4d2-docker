@@ -5,5 +5,10 @@ steps:
 - name: docker
   image: plugins/docker
   settings:
-    repo: docker.kapelle.org/l4d2
-    registry: docker.kapelle.org
+    repo: djeeberjr/l4d2-docker
+    username: djeeberjr
+    password:
+      from_secret: DOCKER_HUB_TOKEN
+trigger:
+  branch:
+  - master
